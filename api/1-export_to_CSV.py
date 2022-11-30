@@ -5,13 +5,13 @@ and export to a CSV file
 """
 
 
+import csv
 import requests
 from sys import argv
-import csv
 
 
-def get_data(user_id):
-    """ retrieves data from an api """
+def export_csv_from_api(user_id):
+    """ retrieves data from an api to export in csv """
     # setting variable for users and their todos with html of API
     user_list = 'https://jsonplaceholder.typicode.com/users/{}'.format(user_id)
     user_todo = 'https://jsonplaceholder.typicode.com/users/{}/todos'\
@@ -29,10 +29,10 @@ def get_data(user_id):
                             quoting=csv.QUOTE_ALL)
         # sets the data in a variable and writes it to each row in the csv
         for data in todo_info:
-            listing = [user_id, user_info['name'],
+            listing = [user_info['id'], user_info['username'],
                        data['completed'], data['title']]
             writer.writerow(listing)
 
 # using the second argument after the file as the user id
 if __name__ == "__main__":
-    get_data(int(argv[1]))
+    export_csv_from_api(int(argv[1]))

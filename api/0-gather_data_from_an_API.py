@@ -27,8 +27,8 @@ def get_data(user_id):
             completed_tasks += 1
 
     print('Employee {} is done with tasks({}/{}):'.format(user_info['name'],
-                                                         completed_tasks,
-                                                         total_tasks))
+                                                          completed_tasks,
+                                                          total_tasks))
 
     # incrementing over completed tasks
     # to print out tasks that have been completed

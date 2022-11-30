@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+This module is designed to extract data from an API
 """
 
 

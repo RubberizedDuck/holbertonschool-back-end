@@ -26,7 +26,7 @@ def get_data(user_id):
         if item['completed']:
             completed_tasks += 1
 
-    print('Employee {} is done with ({}/{})'.format(user_info['name'],
+    print('Employee {} is done with tasks({}/{})'.format(user_info['name'],
                                                     completed_tasks,
                                                     total_tasks))
 
